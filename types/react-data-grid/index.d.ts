@@ -8,7 +8,7 @@
 
 declare namespace AdazzleReactDataGrid {
     interface ExcelColumn {
-        editable: boolean;
+        editable: boolean|((rowData) => boolean);
         name: any;
         key: string;
         width: number;
@@ -314,7 +314,7 @@ declare namespace AdazzleReactDataGrid {
          * Whether this column can be edited.
          * @default false
          */
-        editable?: boolean
+        editable?: boolean|((rowData: T) => boolean)
         /**
          * Whether the rows in the grid can be sorted by this column.
          * @default false
